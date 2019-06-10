@@ -85,7 +85,7 @@ class Cors extends ActionFilter
      * @var array Basic headers handled for the CORS requests.
      */
     public $cors = [
-        'Origin' => ['*'],
+        'Access-Control-Allow-Origin' => ['*'],
         'Access-Control-Request-Method' => ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
         'Access-Control-Request-Headers' => ['*'],
         'Access-Control-Allow-Credentials' => null,

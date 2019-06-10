@@ -1,5 +1,8 @@
 <?php
 ini_set('display_errors', 'on');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
+  
 //error_reporting(E_ERROR | E_NOTICE | E_WARNING );
 
 defined('YII_DEBUG') or define('YII_DEBUG', true);
