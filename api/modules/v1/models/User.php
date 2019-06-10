@@ -30,7 +30,8 @@ class User extends \common\models\User {
     const DEFAULT_USER_MENU_NM='Get Started With Round 1';
     
     public $pwd,$old_pwd,$ad_token;
-    public $user_beverages,$user_fav_sports;    
+    public $user_beverages,$user_fav_sports;
+    public $external_id;
     /**
      * @inheritdoc
      */
