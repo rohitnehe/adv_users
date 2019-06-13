@@ -1,4 +1,5 @@
 artifacts:
   files:
       - appspec.yml
+      
           - ... other files to include in your build ...
