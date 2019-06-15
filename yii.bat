@@ -1,4 +1,4 @@
-@echo off
+ @echo off
 
 rem -------------------------------------------------------------
 rem  Yii command line bootstrap script for Windows.
