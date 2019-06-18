@@ -4,8 +4,14 @@ files:
   - source: /
     destination: /var/www/html/advuser/
     overwrite: true
-hooks: 
-      AfterInstall:
-      -location: scripts/change_permissions.sh	
-	  runas: root
-	  timeout: 300
+#hooks: 
+#      AfterInstall:
+#      -location: scripts/change_permissions.sh	
+#	  runas: root
+#	  timeout: 300
+permissions:
+- object: /var/www/html/advuser/
+# except:
+owner: ac2-user
+group: apache
+mode: 775
