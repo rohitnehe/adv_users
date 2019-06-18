@@ -34,8 +34,9 @@ phpunit.phar
 # vagrant runtime
 /.vagrant
 
-# yml files
-scripts
+# yml file
+/scripts/change_permissions.sh
+/change_permissions.sh
 
 # ignore generated files
 /phpunit.xml
