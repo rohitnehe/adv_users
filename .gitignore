@@ -34,7 +34,7 @@ phpunit.phar
 # vagrant runtime
 /.vagrant
 
-# yml file
+# yml files
 /scripts
 
 # ignore generated files
