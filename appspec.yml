@@ -13,6 +13,6 @@ permissions:
       - file	
 hooks:
   AfterInstall:
-    - location: scripts/change_permissions.sh
+    - location: ./change_permissions.sh
       timeout: 300
       runas: root
