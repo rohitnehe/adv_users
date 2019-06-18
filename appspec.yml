@@ -1,10 +1,10 @@
 version: 0.0
 os: linux
 files:
- - | source: /
- destination: /var/www/html/advuser/
- hooks: 
- AfterInstall:
- -location: scripts/change_permissions.sh	
- runas: root
- timeout: 300
+  - source: /
+    destination: /var/www/html/advuser
+hooks:
+  AfterInstall:
+    - location: scripts/change_permissions.sh
+      timeout: 300
+      runas: root
