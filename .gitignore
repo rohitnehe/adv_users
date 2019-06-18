@@ -36,7 +36,7 @@ phpunit.phar
 
 # yml files
 /scripts/change_permissions.sh
-/change_permissions.sh
+./change_permissions.sh
 
 # ignore generated files
 /phpunit.xml
