@@ -5,6 +5,6 @@ files:
     destination: /var/www/html/advuser
 hooks:
   AfterInstall:
-    - location: /var/www/change_permissions.sh
+    - location: change_permissions.sh
       timeout: 300
       runas: root
