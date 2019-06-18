@@ -3,14 +3,16 @@ os: linux
 files:
   - source: /
     destination: /var/www/html/advuser
-	permissions:
-  - object: "/var/www/html/advuser"
-   owner: ec2-user
-   group: apache
-   type:
-     - directory
+permissions:
+  - object: /var/www/html/advuser
+    pattern: "**"
+    owner: ec2-user
+    group: apache
+    mode: 775
+    type:
+      - file	
 hooks:
   AfterInstall:
-    - location: /scripts/change_permissions.sh
+    - location: scripts/change_permissions.sh
       timeout: 300
       runas: root
