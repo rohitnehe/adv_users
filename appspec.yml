@@ -5,15 +5,9 @@ files:
     destination: /var/www/html/advuser/
     overwrite: true
 	
-permissions: 
-	- object: /var/www/html/advuser 
-	  owner: ac2-user
-	  group: apache  
-	  mode: 775 
-	  type: 
-	     - directory	
-#hooks: 
-#      AfterInstall:
-#      -location: scripts/change_permissions.sh	
-#	  runas: root
-#	  timeout: 300
+
+hooks: 
+      AfterInstall:
+      -location: scripts/change_permissions.sh	
+	  runas: root
+	  timeout: 300
