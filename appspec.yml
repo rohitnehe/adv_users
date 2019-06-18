@@ -9,11 +9,9 @@ permissions:
    group: apache
    type:
      - directory
-
+	
 hooks:
- AfterInstall:
-   - location: /scripts/change_permissions.sh
-     runas: root
-	  
-	  
- 
+  AfterInstall:
+    - location: /scripts/change_permissions.sh
+      timeout: 300
+      runas: root
