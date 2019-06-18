@@ -31,7 +31,7 @@
     "config": {
         "process-timeout": 1800,
         "fxp-asset": {
-            "enabled": false
+            "enabled":  false
         }
     },
     "repositories": [

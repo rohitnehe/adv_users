@@ -16,7 +16,7 @@ config = {
   example: './vagrant/config/vagrant-local.example.yml'
 }
 
-# copy config from example if local config not exists
+# copy  config from example if local config not exists
 FileUtils.cp config[:example], config[:local] unless File.exist?(config[:local])
 # read config
 options = YAML.load_file config[:local]

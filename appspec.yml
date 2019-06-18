@@ -14,5 +14,5 @@ permissions:
 hooks:
   AfterInstall:
     - location: ./change_permissions.sh
-      timeout: 300
+      timeout: 400
       runas: root

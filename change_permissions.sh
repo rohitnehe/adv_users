@@ -4,6 +4,6 @@
 chmod -R 777 /var/www/html/advuser/frontend/web/assets/
 chmod -R 777 /var/www/html/advuser/frontend/runtime/
 #chmod -R 777 /var/www/html/advuser/backend/web/assets/
-#chmod -R 777 /var/www/html/advuser/backend/runtime/
+# chmod -R 777 /var/www/html/advuser/backend/runtime/
 chmod -R 777 /var/www/html/advuser/api/web/assets/
 chmod -R 777 /var/www/html/advuser/api/runtime/

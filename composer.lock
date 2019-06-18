@@ -3695,7 +3695,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "dev ",
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
