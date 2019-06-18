@@ -4,18 +4,19 @@ files:
   - source: /
     destination: /var/www/html/advuser/
     overwrite: true
+mode: 755
+acls: 
+	- "d:u::rwx" 
+	- "d:g::rwx" 
+	- "d:o::rwx" 
+owner: ec2-user
+type: 
+	 - directory	
 #hooks: 
 #      AfterInstall:
 #      -location: scripts/change_permissions.sh	
 #	  runas: root
 #	  timeout: 300
 
-    mode: 755
-	acls: 
-		- "d:u::rwx" 
-		- "d:g::rwx" 
-		- "d:o::rwx" 
-		owner: ec2-user
-		type: 
-		 - directory
+    
 
