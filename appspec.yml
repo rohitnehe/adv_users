@@ -7,4 +7,4 @@ files:
 hooks: 
       AfterInstall:
       -location: scripts/change_permissions.sh	
-
+		runas: root
