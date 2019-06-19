@@ -68,8 +68,7 @@ class UserController extends ActiveController {
             $expire = Yii::$app->params['user.apiAccessTokenExpire'];       
                 $data = [
                     'access_token' => Yii::$app->user->identity->access_token,
-                    'token_valid' => CHelper::getFormatedDatetime( $timestamp + $expire),
-					'testing' => '12'
+                    'token_valid' => CHelper::getFormatedDatetime( $timestamp + $expire)
                         
                 ];
                 return RestHelper::formatResponseSuccess('51bb0c65-e3fa-4a60-bb03-239497189b78', $data); //$model;
