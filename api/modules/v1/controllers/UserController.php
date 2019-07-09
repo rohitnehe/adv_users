@@ -56,6 +56,7 @@ class UserController extends ActiveController {
         $model->scenario = LoginForm::SCENARIO_API_LOGIN;
         
         $email = \Yii::$app->request->getBodyParam('email');
+
         $password = \Yii::$app->request->getBodyParam('password');
 
         $data=array();
