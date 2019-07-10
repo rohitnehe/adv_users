@@ -67,8 +67,6 @@ class User extends \common\models\User {
 
    
     /**
-     * @author Kumar Waghmode <kumarwaghmode@benchmarkitsolutions.com>
-     * @date : 24 Nov 2018
      * @purpose : Used to validate Api user using access token
      * @param type $token
      * @param type $type
@@ -96,8 +94,6 @@ class User extends \common\models\User {
 
 
   /**
-     * @author Kumar Waghmode <kumarwaghmode@benchmarkitsolutions.com>
-     * @date : 03 Dec.2018
      * @Description -: Finds out if access token is valid . 
      * @param string $token access token
      * @return boolean
@@ -115,8 +111,6 @@ class User extends \common\models\User {
  
     
      /**
-     * @author Kumar Waghmode <kumarwaghmode@benchmarkitsolutions.com>
-     * @date : 03 Dec 2018
      * <@Description -: generate access token. >     
      * @return boolean
      */

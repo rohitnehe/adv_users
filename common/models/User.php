@@ -116,7 +116,6 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
 
     /**
      * <@author Nikhil Bhagunde <nikhilbhagunde@benchmarkitsolutions.com>
-     * <@Date -: 04-Oct-2018> 
      * @param type $username
      * @return type
      */
@@ -126,17 +125,11 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
 
     /**
      * <@author Nikhil Bhagunde <nikhilbhagunde@benchmarkitsolutions.com>
-     * <@Date -: 04-Oct-2018>
      * <@Description -: Finds user by password reset token.>
      * @param string $token password reset token
      * @return static|null
      */
     public static function findByPasswordResetToken($token) {
-//       // commented by Kumar on 20Dec2018 
-//       // Pupose : Feedback 73: Link in the email will be active for forever
-//        if (!static::isPasswordResetTokenValid($token)) {
-//            return null;
-//        }
 
         return static::findOne([
                     'password_reset_token' => $token,
@@ -145,7 +138,6 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
     }
 
     /**
-     * <@Date -: 24-Sep-2018>
      * <@Description -: Finds out if password reset token is valid.>
      * @param string $token password reset token
      * @return boolean
@@ -161,7 +153,6 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
     }
 
     /**
-     * <@Date -: 24-Sep-2018>
      * <@Description -: Validates password.>
      * @param string $password password to validate
      * @return boolean if password provided is valid for current user
@@ -182,7 +173,6 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
     }
 
     /**
-     * <@Date -: 24-Sep-2018> 
      * <@Description -:Generates "remember me" authentication key.>
      */
     public function generateAuthKey() {
@@ -205,14 +195,6 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
     public function removePasswordResetToken() {
         $this->password_reset_token = null;
     }
-
-    /**
-     * <@Date -: 24-Sep-2018> 
-     * @return type
-     */
-    // public function getStates() {
-    //     return $this->hasOne(States::className(), ['id' => 'state_id']);
-    // }
 
     /**
      * <@Date -: 24-Sep-2018> 
@@ -245,12 +227,6 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
     }
 
     /**
-     * <@Date -: 24-Sep-2018> 
-     * @param type $id
-     */
-    // public static function findIdentity($id) {
-    // }
-    /**
      * @inheritdoc
      * loginform method take in user as identity class is now User
      */
@@ -258,11 +234,6 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
         return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
     }
     
-    /**
-     * <@Date -: 24-Sep-2018>
-     * @param type $token
-     * @param type $type
-     */
     /**
      * @inheritdoc
      */
@@ -284,8 +255,6 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
     }
 
     /**
-     * <@author Nikhil B.<nikhilbhagunde@benchmarkitsolutions.com>
-     * Date : 24 Sep 2018
      * @param type $email
      * @return type
      */
@@ -304,8 +273,6 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
     }
 
     /**
-     * <@author Ravina Surve. <ravinasurve@benchmarkitsolutions.com>
-     * <@Date -: 24-Sep-2018>
      * @purpose Function to getting states to show dropdown List.     
      * @return type $states
      */
@@ -315,8 +282,6 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
     }
 
     /**
-     * <@author Ravina Surve <ravinasurve@benchmarkitsolutions.com>
-     * <@Date -: 24-Sep-2018>
      * @purpose : Validating entered email is exists or not. 
      * @param type $attribute
      * @param type $params    
@@ -339,8 +304,6 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
     }
 
     /**
-     * <@author Ravina Surve <ravinasurve@benchmarkitsolutions.com>
-     * <@Date -: 15-Oct-2018>
      * <@Description -: get UserInfo relation.>
      * @return type
      */
@@ -349,8 +312,6 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
     }
 
     /**
-     * <@author Ravina Surve <ravinasurve@benchmarkitsolutions.com>
-     * <@Date -: 15-Oct-2018>
      * <@Description -: check old password.>
      * @return type
      */
@@ -361,36 +322,6 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
     }
 
     /**
-     * <@author Ravina Surve <ravinasurve@benchmarkitsolutions.com>
-     * <@Date -: 16-Oct-2018>
-     * <@Description -: if new password entered then old password,confirm password required.>
-     * @return type
-     */
-    public function customCheckRequiredPassword($attribute) {
-        if (!empty($this->newPassword) && $this->newPassword != '' && (empty($this->confirmPassword) || empty($this->password))) {
-            if (empty($this->password) && empty($this->confirmPassword)){
-                $msgOldPassword = 'Old password is required for setting new password';
-                $msgConfirmPassword = 'Confirm password is required for setting new password';
-                $this->addError('confirmPassword', $msgConfirmPassword);
-                $this->addError('password', $msgOldPassword);
-              
-            }
-            elseif (empty($this->confirmPassword)){
-                $msg = 'Confirm password is required for setting new password';
-                $this->addError('confirmPassword', $msg);
-               
-            }   
-            else{
-                $msg = 'Old password is required for setting new password';
-                $this->addError('password', $msg);
-              
-            }
-        }
-    }
-
-    /**
-     * <@author Ravina Surve <ravinasurve@benchmarkitsolutions.com>
-     * <@Date -: 16-Oct-2018>
      * <@Description -: get user list of name and id depends on type.>
      * @return type
      */
@@ -400,8 +331,6 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
     }
     
     /**
-     * <@author Nikhil Bhagunde <nikhilbhagunde@benchmarkitsolutions.com>
-     * <@Date -: 22-Oct-2018>
      * <@Description -: fetch, Activity Log Relation.>
      * @return type
      */
@@ -409,38 +338,9 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
         return $this->hasMany(ActivityLog::className(), ['users_id' => 'id'])->nondeleted();
     }
 
-    /**
-     * <@author Bhushan Amane <bhushanamane@benchmarkitsolutions.com>
-     * <@Date -: 22-Oct-2018>
-     * @purpose : to deactivate child records after deactivate parent 
-     * @param type $id
-     * @param type $type    
-     */
-    public static function setDeactivateChilds($id, $type) {
-      //for updating record      
-        if ($type == "GA" || $type == "CA") {
-            $user = User::find()
-                    ->where(['=', 'ref_user_id', $id])
-                    ->andWhere(['=', 'inactive_after_parent', User::INACTIVE_AFTER_PARENT])
-                    ->andWhere(['=', 'status', User::STATUS_ACTIVE])
-                    ->all();
-
-            foreach ($user as $models) {
-                $user_data = User::findOne(['id' => $models->id]);
-                $user_data->inactive_after_parent = User::ACTIVE_AFTER_PARENT;
-                $user_data->status = User::STATUS_INACTIVATE;
-                $user_data->save(false);
-            }
-        }
-       // \CHelper::debug($model->growerRel);
-        if($type == "SAL"){ 
-           return true; 
-        }
-    }
+    
 
     /**
-     * <@author Bhushan Amane <bhushanamane@benchmarkitsolutions.com>
-     * <@Date -: 22-Oct-2018>
      * @purpose : to activate child records after activate parent 
      * @param type $id
      * @param type $type    
@@ -461,39 +361,30 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
                 $user_data->save(false);
             }
         }
-        // \CHelper::debug($model->growerRel);
         if($type == "SAL"){ 
                 return true; 
         }
     }
     
     /**
-     * @author Niranjan Patil <niranjanpatil@benchmarkitsolutions.com>
-     * @Date -: 29 Nov 2018
      * @purpose : find user by grow point external id 
      * @param type $id
      * @param type $type    
      */
     public static function findByGrowpoitExternalId($id){
         return self::find()->where(['growpoint_external_id' => $id])->active()->nondeleted()->one();
-//       echo $query->createCommand()->rawSql;die;
     }
 
     public static function findIdentityOfUser($id) {
         return static::findOne($id);
     }
     /**
-     * @author Ravina surve <ravinasurve@benchmarkitsolutions.com>
-     * @Date -: 9 jan 2019
      * @purpose : get user's user_type,ref_user_id,status   
      */
     public static function getUserStatusAndParent($id) {
         return static::find()->select(['user_type','status','ref_user_id'])->where(['id' => $id,'is_deleted' => self::STATUS_NOT_DELETED])->one();
-       
     }
      /**
-     * <@author Kumar Waghmode <kumarwaghmode@benchmarkitsolutions.com>
-     * <@Date -: 14Jan2019>
      * @purpose : Validating entered growpoint external id  is exists or not. 
      * @param type $attribute
      * @param type $params    
@@ -519,8 +410,6 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
      * End
      */
     /**
-     * <@author Kumar Waghmode <kumarwaghmode@benchmarkitsolutions.com>
-     * <@Date -: 14Jan2019>
      * @purpose : Validating entered license_key  is exists or not. 
      * @param type $attribute
      * @param type $params    
@@ -548,33 +437,6 @@ class User extends BaseModel implements \yii\web\IdentityInterface {
     
     
     /**
-     * <@author Bhushan Amane <bhushanamane@benchmarkitsolutions.com>
-     * <@Date -: 14Jan2019>
-     * @purpose : Validating entered license_key  is exists or not. 
-     * @param type $attribute
-     * @param type $params    
-     */
-     public function getUserCounts() {
-        $query = (new Query())->select(
-                        'SUM(case when user_type = "GA" AND status="A" then 1 else 0 end) grower_count,
-                SUM(case when user_type = "CA" AND status="A" then 1 else 0 end) customer_count,
-                SUM(case when user_type = "SAL" AND status="A" then 1 else 0 end) sales_count'
-                )->from('tbl_users');
-        $query->join('INNER JOIN','tbl_users_info','tbl_users_info.users_id=tbl_users.id');
-        $openOrderData = $query->one();
-        return $openOrderData;
-    }
-    
-    
-    public static function findSuperadminEmail() 
-    {
-        $query = User::find()->select('email , full_name')->asArray()->where(['in', 'user_type', 'SA'])->nondeleted()->active()->verified()->all();
-        return $query;
-    }
-    
-    /**
-     * @author Niranjan Patil <niranjanpatil@benchmarkitsolutions.com>
-     * @date : 1 APR 2019
      * @purpose check email exist in user table and return error with user type
      * @return type
      */
