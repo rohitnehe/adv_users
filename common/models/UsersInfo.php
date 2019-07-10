@@ -136,14 +136,6 @@ class UsersInfo extends \common\models\BaseModel
     }
 
     /**
-     * {@inheritdoc}
-     * @return UsersInfoQuery the active query used by this AR class.
-     */
-//    public static function find()
-//    {
-//        return new UsersInfoQuery(get_called_class());
-//    }
-    /**
      * <@Date -: 24-Sep-2018> 
      * @return type
      */
@@ -164,20 +156,4 @@ class UsersInfo extends \common\models\BaseModel
         return !empty($this->states)?$this->states->name:"";
     }
     
-    /**
-     * <@Date -: 15-March-2019>
-     * <@author Nihkil Bhagunde <nikhilbhagunde@benchmarkitsolutions.com>
-     * @param type $users_ids
-     * @return type
-     */
-    public static function getHideShowFiledsCount($users_ids)
-    {
-         $query = (new \yii\db\Query())->select(
-                        'SUM(case when '.self::tableName().'. `is_show_item_condition` = '.self::IS_SHOW_ITEM_CONDITION.' then 1 else 0 end) itemConditionCount,
-                SUM(case when '.self::tableName().'. `is_show_item_price` = '.self::IS_SHOW_ITEM_PRICE.' then 1 else 0 end) itemPriceCount,
-                SUM(case when '.self::tableName().'. `is_show_item_photo` = '.self::IS_SHOW_ITEM_PHOTO.' then 1 else 0 end) itemPhotosCount'
-                )->from(self::tableName())
-                ->where(['in', 'users_id', $users_ids]);
-        return $query->one();
-    }
 }
