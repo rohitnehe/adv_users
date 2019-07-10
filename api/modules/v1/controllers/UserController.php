@@ -46,8 +46,6 @@ class UserController extends ActiveController {
     }
 
     /**
-     * @author Kumar Waghmode <kumarwaghmode@benchmarkitsolutions.com>
-     * @date : 24 Nov 2018
      * This Action is Used To Login The user.
      * @return array of data
      */
@@ -77,19 +75,13 @@ class UserController extends ActiveController {
             return RestHelper::formatResponseError("6fadbfc1-e90f-429f-8095-0d543dff5d7e", $data);//$model->getErrors()['password'][0]
         }
     }
-
-   
-
    
 
     /**
-     * @author Kumar Waghmode <kumarwaghmode@benchmarkitsolutions.com>
-     * @date : 24 Nov 2018
      * @purpose This Function used To Logout The User
      * @return 
      */
     public function actionLogout() {
-//        CHelper::addApiRequestLog("Logout");
         $id = \CHelper::getUserIdentityData('id');
         $params = \Yii::$app->request->bodyParams;        
         $data=array();  
