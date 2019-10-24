@@ -6,7 +6,7 @@ files:
 permissions:
   - object: /var/www/html/advuser
     pattern: "**"
-    owner: ec2-user
+    owner: apache
     group: apache
     mode: 775
     type:
