@@ -4,8 +4,8 @@ return [
        'db' => [
            'class' => 'yii\db\Connection',
            'dsn' => 'mysql:host=hostname;dbname=databasename',
-           'username' => 'username',
-           'password' => 'password',
+           'username' => 'mysqlusername',
+           'password' => 'mysqlpassword',
            'charset' => 'utf8',
            'tablePrefix' => 'tbl_',
        ],
@@ -15,8 +15,8 @@ return [
           'transport' => [
               'class' => 'Swift_SmtpTransport',
               'host' => 'smtp.gmail.com',
-              'username' => 'username',
-              'password' => 'password',
+              'username' => 'smtpusername',
+              'password' => 'smtppassword',
               'port' => '587',
               'encryption' => 'tls',
           ],
